@@ -3,13 +3,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def remove_background(image_path):
-    # Cargar la imagen
+    
     image = cv2.imread(image_path)
     
-    # Convertir la imagen a escala de grises
+    
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     
-    # Aplicar umbral adaptativo para obtener una máscara
+    
     _, mask = cv2.threshold(gray, 240, 255, cv2.THRESH_BINARY)
     
     # Invertir la máscara para tener el fondo en blanco y el objeto en negro
